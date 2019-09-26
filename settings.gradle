@@ -1,3 +1,4 @@
 include ':kotlin-inject-compiler'
 include ':kotlin-inject-runtime'
+include ':kotlin-inject-gradle-plugin'
 include ':integration-tests'

@@ -19,7 +19,7 @@ class ProjectCompiler(private val root: File) {
         val settingsFile = root.resolve("settings.gradle")
 
         settingsFile.writeText(
-            """
+                """
            include ':kotlin-inject-compiler'
            include ':kotlin-inject-runtime'
            project(':kotlin-inject-compiler').projectDir = new File('${File("../kotlin-inject-compiler").absolutePath}')
@@ -30,7 +30,7 @@ class ProjectCompiler(private val root: File) {
         val buildFile = root.resolve("build.gradle")
 
         buildFile.writeText(
-            """
+                """
             plugins {
                 id 'org.jetbrains.kotlin.jvm' version '1.3.31'
                 id 'org.jetbrains.kotlin.kapt' version '1.3.31'
@@ -57,9 +57,9 @@ class ProjectCompiler(private val root: File) {
         }
 
         GradleRunner.create()
-            .withProjectDir(root)
-            .withArguments("assemble")
-            .build()
+                .withProjectDir(root)
+                .withArguments("assemble")
+                .build().apply { println(output) }
     }
 }
 
