@@ -3,7 +3,7 @@ plugins {
 }
 
 repositories {
-    maven { url 'https://jitpack.io' }
+    maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
 }
 
 dependencies {
@@ -19,11 +19,9 @@ dependencies {
     testImplementation 'com.willowtreeapps.assertk:assertk-jvm:0.22'
     testImplementation 'com.squareup.burst:burst-junit4:1.2.0'
 
-    testImplementation 'com.github.tschuchortdev.kotlin-compile-testing:kotlin-compile-testing:ee9aaf356e'
-    testImplementation 'com.github.tschuchortdev.kotlin-compile-testing:kotlin-compile-testing-ksp:ee9aaf356e'
-    testImplementation 'org.jetbrains.kotlin:kotlin-compiler-embeddable:1.4.0-rc'
-    testImplementation 'org.jetbrains.kotlin:kotlin-ksp:1.4.0-rc-dev-experimental-20200731'
+    testImplementation 'org.jetbrains.kotlin:kotlin-ksp:1.4.0-rc-dev-experimental-20200814'
     testImplementation 'org.jetbrains.kotlin:kotlin-symbol-processing-api:1.4.0-rc-dev-experimental-20200814'
+    testImplementation 'me.tatarka.kotlin-compile-testing:kotlin-compile-testing-ksp:1.2.9-SNAPSHOT'
 }
 
 sourceCompatibility = 1.8

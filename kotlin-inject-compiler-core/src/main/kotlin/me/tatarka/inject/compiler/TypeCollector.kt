@@ -176,8 +176,7 @@ class TypeCollector private constructor(private val provider: AstProvider, priva
     )
 
     private fun duplicate(key: TypeKey, newValue: AstElement, oldValue: AstElement) {
-        error("Cannot provide: $key", newValue)
-        error("as it is already provided", oldValue)
+        error("Cannot provide: $key\nas it is already provided:\n${with(provider) { oldValue.toTrace() }}", newValue)
     }
 
     val scoped: Iterable<AstType> = _scoped
